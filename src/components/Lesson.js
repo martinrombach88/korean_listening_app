@@ -18,7 +18,6 @@ import lessonDialogue from '../json/lesson_dialogue.json'
 
 const Lesson = () => {
     let list = lessonDialogue[2].data;
-      
     
     return ( 
         <div>
@@ -29,7 +28,7 @@ const Lesson = () => {
                     </Typography>
                 </Grid>
             
-                <Card >
+                <Card align="center">
                     <CardMedia
                         component="img"
                         alt="topMedia"
@@ -40,34 +39,34 @@ const Lesson = () => {
                             <List >
                                 {/* List components should generated with a map call */}
                                 <ListItem>
-                                    <Dialogue dialogueList={list[0]} audioFile={0}/>
+                                    <Dialogue dialogueList={list[70]}/>
                                 </ListItem>
                                 <ListItem>
-                                    <Dialogue dialogueList={list[1]} audioFile={1}/>
+                                    <Dialogue dialogueList={list[61]}/>
                                 </ListItem>
                                 <ListItem>
-                                    <Dialogue dialogueList={list[2]} audioFile={2}/>
+                                    <Dialogue dialogueList={list[62]}/>
                                 </ListItem>
                                 <ListItem>
-                                    <Dialogue dialogueList={list[3]} audioFile={3}/>
+                                    <Dialogue dialogueList={list[63]}/>
                                 </ListItem>
                                 <ListItem>
-                                    <Dialogue dialogueList={list[4]} audioFile={4}/>
+                                    <Dialogue dialogueList={list[64]}/>
                                 </ListItem>
                                 <ListItem>
-                                    <Dialogue dialogueList={list[5]} audioFile={5}/>
+                                    <Dialogue dialogueList={list[65]}/>
                                 </ListItem>
                                 <ListItem>
-                                    <Dialogue dialogueList={list[6]} audioFile={6}/>
+                                    <Dialogue dialogueList={list[66]}/>
                                 </ListItem>
                                 <ListItem>
-                                    <Dialogue dialogueList={list[7]} audioFile={7}/>
+                                    <Dialogue dialogueList={list[67]}/>
                                 </ListItem>
                                 <ListItem>
-                                    <Dialogue dialogueList={list[8]} audioFile={8}/>
+                                    <Dialogue dialogueList={list[68]}/>
                                 </ListItem>
                                 <ListItem>
-                                    <Dialogue dialogueList={list[9]} audioFile={9}/>
+                                    <Dialogue dialogueList={list[69]}/>
                                 </ListItem>
     
 

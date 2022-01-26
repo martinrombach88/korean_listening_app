@@ -9,6 +9,7 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
 import CardMedia from '@mui/material/CardMedia';
+import IyagiInt from './IyagiInt'
 import iyagiPic from '../images/iyagi.jpg';
 import mediaTop from '../images/mediaTop.png';
 
@@ -44,7 +45,7 @@ const Home = () => {
                         <ListItem alignItems="flex-start" sx={{width: 340}}>
                             <Button variant="outlined" href="Course"> 
                                 <ListItemAvatar>
-                                    <Avatar alt="iyagi" src={iyagiPic} />
+                                    <Avatar alt="iyagi" src={require('../images/' + IyagiInt.image)} />
                                 </ListItemAvatar>
 
                                 <ListItemText
@@ -53,7 +54,7 @@ const Home = () => {
                                         <Typography
                                             variant="h5"
                                             color="text.primary"
-                                        >Iyagi Intermediate
+                                        >{IyagiInt.title}
                                         </Typography>
                                     }        
                                     secondary={
@@ -61,7 +62,7 @@ const Home = () => {
                                             variant="h6"
                                             color="text.link"
                                         >
-                                            Talk To Me In Korean
+                                            {IyagiInt.company}
                                         </Typography>
                                     }
                                 />

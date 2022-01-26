@@ -13,7 +13,7 @@ import CardMedia from '@mui/material/CardMedia';
 import iyagiPic from '../images/iyagi.jpg'
 import mediaTop from '../images/mediaTop.png'
 
-const Course = () => {
+const Course = ({}) => {
     return (       
     
         <Container align="center">
@@ -54,7 +54,7 @@ const Course = () => {
                                             variant="h5"
                                             color="text.link"
                                         >
-                                        아침 식사
+                                        노인 우선석
                                         </Typography>
                                     }
                                 />
