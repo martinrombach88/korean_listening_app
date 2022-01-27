@@ -7,7 +7,7 @@ import 'react-h5-audio-player/lib/styles.css';
 // import Int1 from './Int1_HardCopy';
 // import Int from './AudioFiles';
 
-const Dialogue = ({dialogueList, audioFile}) => {
+const DialogueBtn = ({dialogueList, audioFile}) => {
 
     const playerRef = useRef();
 
@@ -29,14 +29,15 @@ const Dialogue = ({dialogueList, audioFile}) => {
     }
 
     return ( 
+        <ListItem sx={{justifyContent:"center"}}> 
             <Card sx = {{display:"flex", flexDirection:"row", p:2}}>
 
-                <Grid sx = {{display:"flex", flexDirection:"column"}}>
+                <Grid sx = {{width: 700, display:"flex", flexDirection:"column"}}>
                     <Typography sx={{ ml: 2, mr:2}}>
                         {dialogueList.speaker_hangeul}: {dialogueList.original_text}
                     </Typography>
 
-                    <Typography sx={{ mb:2, ml:2, mr:2, fontSize:"12px"}}>
+                    <Typography sx={{ ml:2, mr:2, fontSize:"12px"}}>
                         {dialogueList.speaker_roman}: {dialogueList.gt_text}
                     </Typography>
 
@@ -51,9 +52,9 @@ const Dialogue = ({dialogueList, audioFile}) => {
                             ref={playerRef}
                             layout="horizontal"
                             showJumpControls={false}
-                            // showProgressBar={false}
+                            showProgressBar={false}
                             customVolumeControls={[]}
-                            // customProgressBarSection={[]}
+                            customProgressBarSection={[]}
                             src={require('../audio/int/' + dialogueList.mp3file)}
                             preload="auto"
                             listenInterval={10}
@@ -62,7 +63,8 @@ const Dialogue = ({dialogueList, audioFile}) => {
 
                         />
             </Card>
+        </ListItem>
      );
 }
  
-export default Dialogue;
+export default DialogueBtn;

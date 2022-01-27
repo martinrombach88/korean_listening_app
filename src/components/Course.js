@@ -3,65 +3,44 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemText from '@mui/material/ListItemText';
-import ListItemAvatar from '@mui/material/ListItemAvatar';
-import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
 import CardMedia from '@mui/material/CardMedia';
-import iyagiPic from '../images/iyagi.jpg'
 import mediaTop from '../images/mediaTop.png'
+import CourseBtn from './CourseBtn'
+import IyagiInt from './IyagiInt'
+import lessonDialogue from '../json/lesson_dialogue.json'
 
-const Course = ({}) => {
-    return (       
+//Iyagi Int
+// 0-70 "Priority seats for the elderly" OK
+// 71-146 "Bookstores" OK
+// 147-248 "Coping with stress" OK
+
+const Course = () => {
     
+    return (       
+        
         <Container align="center">
 
             <Grid>
                 <Typography sx={{ m: 2}} variant="h4">
-                IYAGI Intermediate – Listening in 100% Natural Korean
+                {IyagiInt.title} - {IyagiInt.company}
+                
                 </Typography>
             </Grid>
             
-            <Card sx={{width: 600}}>
+            <Card sx={{width: 800}}>
                 <CardMedia
                     component="img"
                     alt="topMedia"
                     height="50"
                     image={mediaTop}
                 />
-                <Grid>
-                    <List sx={{width: 500, justifyContent:"center"}}>
-                        {/* List components should generated with a map call */}
-                        <ListItem>
-                            <Button variant="outlined" href="lesson">
-                                <ListItemAvatar>
-                                    <Avatar alt="iyagi" src={iyagiPic} />
-                                </ListItemAvatar>
-
-                                <ListItemText
-                                    primary={
-                                        
-                                        <Typography
-                                            variant="h5"
-                                            color="text.primary"
-                                        >Lesson 1. Priority seats for the elderly
-                                        </Typography>
-                                    }        
-                                    secondary={
-                                        <Typography
-                                            variant="h5"
-                                            color="text.link"
-                                        >
-                                        노인 우선석
-                                        </Typography>
-                                    }
-                                />
-                            </Button>
-                        </ListItem>
-
-        
+                <Grid >
+                    <List >
+                        <CourseBtn lessonInfo={lessonDialogue[2].data[1]}/>
+                        <CourseBtn lessonInfo={lessonDialogue[2].data[71]}/>
+                        <CourseBtn lessonInfo={lessonDialogue[2].data[147]}/>
                     </List>
                 </Grid>
             </Card>
