@@ -1,13 +1,16 @@
 import Typography from '@mui/material/Typography';
 import Card from '@mui/material/Card';
 import Grid from '@mui/material/Grid';
+import Button from '@mui/material/Button';
+import ListItem from '@mui/material/ListItem';
 import { useRef } from 'react';
 import AudioPlayer from 'react-h5-audio-player';
 import 'react-h5-audio-player/lib/styles.css';
-import ListItem from '@mui/material/ListItem';
 
+// import Int1 from './Int1_HardCopy';
+// import Int from './AudioFiles';
 
-const DialogueBtn = ({dialogueList, audioFile}) => {
+const DialogueBtn = ({dialogueList}) => {
 
     const playerRef = useRef();
 
@@ -30,7 +33,7 @@ const DialogueBtn = ({dialogueList, audioFile}) => {
 
     return ( 
         <ListItem sx={{justifyContent:"center"}}> 
-            <Card sx = {{display:"flex", flexDirection:"row", p:2}}>
+            <Card sx = {{display:"flex", flexDirection:"row", boxShadow:'none', }}>
 
                 <Grid sx = {{width: 700, display:"flex", flexDirection:"column"}}>
                     <Typography sx={{ ml: 2, mr:2}}>
@@ -42,6 +45,9 @@ const DialogueBtn = ({dialogueList, audioFile}) => {
                     </Typography>
 
                 </Grid>
+                <Button>ENG</Button>
+                <Button>KWO</Button>
+                <Button>HIDE</Button>
                 <AudioPlayer 
                             style={{
                                 // width:'80px',
