@@ -29,9 +29,9 @@ function App() {
               <Route path="/">
                 {/* w3 includes: for the topbar sidebar perhaps <Route path="/" element={<Layout />}> */}
                 <Route index element={<Home/>}/>
-                <Route path="course" element={<Course/>}/>
+                <Route exact path="course/:courseid" element={<Course/>}/>
                 <Route path="error" element={<Error />} />
-                <Route path="lesson" element={<Lesson />} />
+                <Route exact path="course/:courseid/lesson/:lessonid" element={<Lesson />} />
               </Route>
           </Routes>
         </BrowserRouter>
