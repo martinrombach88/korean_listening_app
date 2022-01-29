@@ -6,10 +6,12 @@ import List from '@mui/material/List';
 import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
 import CardMedia from '@mui/material/CardMedia';
-import mediaTop from '../images/mediaTop.png'
-import CourseBtn from './CourseBtn'
-import IyagiInt from './IyagiInt'
-import lessonDialogue from '../json/lesson_dialogue.json'
+import mediaTop from '../images/mediaTop.png';
+import CourseBtn from './CourseBtn';
+import IyagiInt from './IyagiInt';
+import lessonDialogue from '../json/lesson_dialogue.json';
+import { useParams } from 'react-router-dom';
+import { getCourse } from './Query'
 
 //Iyagi Int
 // 0-70 "Priority seats for the elderly" OK
@@ -17,7 +19,15 @@ import lessonDialogue from '../json/lesson_dialogue.json'
 // 147-248 "Coping with stress" OK
 
 const Course = () => {
-    
+    const {courseid} = useParams();
+    const course = getCourse(courseid);
+    console.log(course);
+    const renderedCourseBtns = course.lessons.map((lesson)=> {
+        return (
+        <CourseBtn lesson={lesson} key={lesson.id} course={course}/>
+        )
+    });
+    console.log(courseid);
     return (       
         
         <Container align="center">
@@ -38,9 +48,7 @@ const Course = () => {
                 />
                 <Grid >
                     <List >
-                        <CourseBtn lessonInfo={lessonDialogue[2].data[1]}/>
-                        <CourseBtn lessonInfo={lessonDialogue[2].data[71]}/>
-                        <CourseBtn lessonInfo={lessonDialogue[2].data[147]}/>
+                        {renderedCourseBtns}
                     </List>
                 </Grid>
             </Card>

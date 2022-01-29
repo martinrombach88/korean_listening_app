@@ -6,10 +6,10 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import iyagiPic from '../images/iyagi.jpg'
 
-const CourseBtn = ({lessonInfo}) => {
+const CourseBtn = ({course, lesson}) => {
     return ( 
         <ListItem sx={{justifyContent:"center"}}>
-                            <Button variant="outlined" href="lesson">
+                            <Button variant="outlined" href={`${course.id}/lesson/${lesson.number}`}>
                                 <ListItemAvatar>
                                     <Avatar alt="iyagi" src={iyagiPic} />
                                 </ListItemAvatar>
@@ -20,7 +20,7 @@ const CourseBtn = ({lessonInfo}) => {
                                         <Typography
                                             variant="h5"
                                             color="text.primary"
-                                        >Lesson {lessonInfo.lesson_number}: {lessonInfo.lesson_name}
+                                        >Lesson {lesson.number}: {lesson.roman_name}
                                         </Typography>
                                     }        
                                     secondary={
@@ -28,7 +28,7 @@ const CourseBtn = ({lessonInfo}) => {
                                             variant="h5"
                                             color="text.link"
                                         >
-                                        kr_lesson_name e.g. - 노인 우선석
+                                        {lesson.hangeul_name}
                                         </Typography>
                                     }
                                 />

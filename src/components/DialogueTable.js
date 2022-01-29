@@ -5,8 +5,8 @@ import { useRef } from 'react';
 import AudioPlayer from 'react-h5-audio-player';
 import 'react-h5-audio-player/lib/styles.css';
 
-const DialogueTable = ({engSubtitles, setEngSubtitles}) => {
-    let data = lessonDialogue[2].data;
+const DialogueTable = ({dialogues, engSubtitles, setEngSubtitles}) => {
+    
     const playerRef = useRef();
 
     const onPlay = (dialogueList) => {
@@ -43,6 +43,7 @@ const DialogueTable = ({engSubtitles, setEngSubtitles}) => {
             title: '',
             field: 'link',
             render: (rowData) => (
+
                 <AudioPlayer 
                             style={{
                                 // width:'80px',
@@ -53,9 +54,9 @@ const DialogueTable = ({engSubtitles, setEngSubtitles}) => {
                             ref={playerRef}
                             layout="horizontal"
                             showJumpControls={false}
-                            showProgressBar={false}
+                            // showProgressBar={false}
                             customVolumeControls={[]}
-                            customProgressBarSection={[]}
+                            // customProgressBarSection={[]}
                             src={require('../audio/int/' + rowData.mp3file)}
                             preload="auto"
                             listenInterval={10}
@@ -69,28 +70,28 @@ const DialogueTable = ({engSubtitles, setEngSubtitles}) => {
 
     return ( 
         <MaterialTable
-                        title=""
-                        data={data}
-                        columns={columns}
-                        options={{
-                            search: false,
-                            paging: true,
-                            pageSize: 5,
-                            pageSizeOptions: false,
-                            onPageChange: true,
-                        }}
-                        components={{
-                            Toolbar: props => (
-                                <div style={{ display:"none" }}>
-                                    <MTableToolbar {...props} />
-                                </div>
-                            ),
-                            Header: props => (
-                                <div style={{display:"none"}}>
-                                    <MTableHeader {...props} />
-                                </div>
-                            )
-                        }}
+                    title=""
+                    data={dialogues}
+                    columns={columns}
+                    options={{
+                        search: false,
+                        paging: true,
+                        pageSize: 5,
+                        onPageChange: true,
+                        
+                    }}
+                    components={{
+                        Toolbar: props => (
+                            <div style={{ display:"none" }}>
+                                <MTableToolbar {...props} />
+                            </div>
+                        ),
+                        Header: props => (
+                            <div style={{display:"none"}}>
+                                <MTableHeader {...props} />
+                            </div>
+                        )
+                    }}
         />
      );
 }

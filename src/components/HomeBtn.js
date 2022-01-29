@@ -7,9 +7,10 @@ import Typography from '@mui/material/Typography';
 
 
 const HomeBtn = ({courseObject}) => {
+
     return ( 
     <ListItem alignItems="flex-start" sx={{width: 340}}>
-        <Button variant="outlined" href="course"> 
+        <Button variant="outlined" href={`course/${courseObject.id}`}> 
             <ListItemAvatar>
                 <Avatar alt="iyagi" src={require('../images/' + courseObject.image)} />
             </ListItemAvatar>
@@ -20,7 +21,7 @@ const HomeBtn = ({courseObject}) => {
                     <Typography
                         variant="h5"
                         color="text.primary"
-                    >{courseObject.title}
+                    >{courseObject.roman_name}
                     </Typography>
                 }        
                 secondary={

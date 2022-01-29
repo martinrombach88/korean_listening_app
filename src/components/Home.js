@@ -4,16 +4,22 @@ import Grid from '@mui/material/Grid';
 import List from '@mui/material/List';
 import Card from '@mui/material/Card';
 import CardMedia from '@mui/material/CardMedia';
-import IyagiInt from './IyagiInt'
 import mediaTop from '../images/mediaTop.png';
 import HomeBtn from './HomeBtn'
+import { getCourses } from './Query'
 
 const Home = () => {
+    const courses = getCourses();
+    const renderedHomeBtns = courses.map((course)=> {
+        return (
+        <HomeBtn courseObject={course} key={course.id}/>
+        )
+    });
     return ( 
         <Container align="center" sx={{ width: '100%'}} >
 
             <Grid>
-                <Typography sx={{ m: 2}}variant="h5">
+                <Typography sx={{ m: 2}} variant="h5">
                 Korean Audio Courses
                 </Typography>
 
@@ -35,10 +41,7 @@ const Home = () => {
                 />
                 <Grid>
                     <List>
-                        {/* List components should generated with a map call */}
-  
-                        < HomeBtn courseObject={IyagiInt} />
-                    
+                        {renderedHomeBtns}                    
                     </List>
                 </Grid>
             </Card>
