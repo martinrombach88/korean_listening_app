@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/korean_listening_app/static/css/main.403c1655.css",
-    "main.js": "/korean_listening_app/static/js/main.05e7ceec.js",
+    "main.css": "/korean_listening_app/static/css/main.189d6f39.css",
+    "main.js": "/korean_listening_app/static/js/main.d0250be1.js",
     "static/media/ttmik-iyagi-int-06.mp3": "/korean_listening_app/static/media/ttmik-iyagi-int-06.037d8f064507f2f79704.mp3",
     "static/media/ttmik-iyagi-int-08.mp3": "/korean_listening_app/static/media/ttmik-iyagi-int-08.bd88f5090da86e3c5e52.mp3",
     "static/media/ttmik-iyagi-int-11.mp3": "/korean_listening_app/static/media/ttmik-iyagi-int-11.489af725c2f756ed23a6.mp3",
@@ -94,11 +94,11 @@
     "static/media/26.mp3": "/korean_listening_app/static/media/26.11538a371633637fbba8.mp3",
     "static/media/latest.aup": "/korean_listening_app/static/media/latest.d9e1fc5df188037ec811.aup",
     "index.html": "/korean_listening_app/index.html",
-    "main.403c1655.css.map": "/korean_listening_app/static/css/main.403c1655.css.map",
-    "main.05e7ceec.js.map": "/korean_listening_app/static/js/main.05e7ceec.js.map"
+    "main.189d6f39.css.map": "/korean_listening_app/static/css/main.189d6f39.css.map",
+    "main.d0250be1.js.map": "/korean_listening_app/static/js/main.d0250be1.js.map"
   },
   "entrypoints": [
-    "static/css/main.403c1655.css",
-    "static/js/main.05e7ceec.js"
+    "static/css/main.189d6f39.css",
+    "static/js/main.d0250be1.js"
   ]
 }
