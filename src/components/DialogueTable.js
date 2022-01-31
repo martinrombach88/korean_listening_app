@@ -1,23 +1,18 @@
 import PaginatedTable from '@fidelisppm/paginated-table';
-import lessonDialogue from '../json/lesson_dialogue.json'
-import { useRef } from 'react';
-import AudioPlayer from 'react-h5-audio-player';
-import 'react-h5-audio-player/lib/styles.css';
 import Typography from '@mui/material/Typography';
-import '../index.css'
+import 'react-h5-audio-player/lib/styles.css';
 import DialogueAudio from './DialogueAudio';
+import { useRef } from 'react';
+import '../index.css'
 
 
 const DialogueTable = ({dialogues, engSubtitles, setEngSubtitles}) => {
     const playerRef = useRef();
     const rows = [];
-    
 
     dialogues.map((row)=> {
         const onPlay = () => {
             if(playerRef.current.audio.current.currentTime < row.dialogue_stop) {
-                console.log(playerRef.current.audio.current.currentTime);
-                console.log(row.dialogue_start)
                 playerRef.current.audio.current.currentTime = row.dialogue_start;
             }   
         }
@@ -40,7 +35,7 @@ const DialogueTable = ({dialogues, engSubtitles, setEngSubtitles}) => {
         
         rows.push(
             {
-            sentence:
+            sentence: 
                 <>
                 <Typography sx={{ m: 1}}>
                     {displayedKRText}
@@ -49,7 +44,7 @@ const DialogueTable = ({dialogues, engSubtitles, setEngSubtitles}) => {
                     {displayedENGText}
                 </Typography>
                 </>,
-            sound: <DialogueAudio dialogueList={row}/>
+            sound: <DialogueAudio dialogue={row}/>
             })
     });
 
@@ -63,7 +58,7 @@ const DialogueTable = ({dialogues, engSubtitles, setEngSubtitles}) => {
         <PaginatedTable 
         headers={headers} 
         dataRows={rows} 
-        entriesPerPage={5}
+        entriesPerPage={3}
         className="paginatedTable"
         />
      );

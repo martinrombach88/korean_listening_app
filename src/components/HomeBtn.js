@@ -9,8 +9,8 @@ import Typography from '@mui/material/Typography';
 const HomeBtn = ({courseObject}) => {
 
     return ( 
-    <ListItem alignItems="flex-start" sx={{width: 340}}>
-        <Button variant="outlined" href={`course/${courseObject.id}`}> 
+    <ListItem sx={{justifyContent:"center"}}>
+        <Button align="center" variant="outlined" href={`course/${courseObject.id}`} sx={{minWidth:"100%"}}> 
             <ListItemAvatar>
                 <Avatar alt="iyagi" src={require('../images/' + courseObject.image)} />
             </ListItemAvatar>

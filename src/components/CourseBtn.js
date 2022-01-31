@@ -8,11 +8,11 @@ import iyagiPic from '../images/iyagi.jpg'
 
 const CourseBtn = ({course, lesson}) => {
     return ( 
-        <ListItem sx={{justifyContent:"center"}}>
+        <ListItem sx={{width:"100%"}}>
+
                             <Button variant="outlined" href={`${course.id}/lesson/${lesson.number}`}>
                                 <ListItemAvatar>
                                     <Avatar alt="iyagi" src={iyagiPic} />
-                                    {/* This isn't modular yet. */}
                                 </ListItemAvatar>
 
                                 <ListItemText

@@ -1,30 +1,23 @@
-import Typography from '@mui/material/Typography';
-import Card from '@mui/material/Card';
-import Grid from '@mui/material/Grid';
-import Button from '@mui/material/Button';
-import ListItem from '@mui/material/ListItem';
-import { useRef } from 'react';
+import { useRef} from 'react';
 import AudioPlayer from 'react-h5-audio-player';
 import 'react-h5-audio-player/lib/styles.css';
 
-const DialogueAudio = ({dialogueList}) => {
+const DialogueAudio = ({dialogue}) => {
 
     const playerRef = useRef();
 
-    const onPlay = () => {
-        if(playerRef.current.audio.current.currentTime < dialogueList.dialogue_stop) {
-            console.log(playerRef.current.audio.current.currentTime);
-            playerRef.current.audio.current.currentTime = dialogueList.dialogue_start;
-        }
-        
+    const onPlay = (e) => {
+        if(e.currentTarget.currentTime < dialogue.dialogue_stop) {
+            e.currentTarget.currentTime = dialogue.dialogue_start;
+        }   
     }
-    const onListen = () => {
-        if(playerRef.current.audio.current.currentTime >= dialogueList.dialogue_stop) {
-            playerRef.current.audio.current.currentTime = dialogueList.dialogue_start;
-            playerRef.current.audio.current.pause();
 
-            
-        }
+    const onListen = (e) => {
+        if(e.currentTarget.currentTime >= dialogue.dialogue_stop) {
+            e.currentTarget.currentTime = dialogue.dialogue_start;
+            e.currentTarget.pause();  
+        
+        } 
     }
 
     return ( 
@@ -36,18 +29,18 @@ const DialogueAudio = ({dialogueList}) => {
                                 padding:0,
                                 background: 'none',
                             }}
-                            ref={playerRef}
                             layout="horizontal"
                             showJumpControls={false}
                             customVolumeControls={[]}
+                            customAdditionalControls={[]}
                             showProgressBar={false}
                             customProgressBarSection={[]}
-                            src={require('../audio/int/' + dialogueList.mp3file)}
+                            src={require('../audio/int/' + dialogue.mp3file)}
                             preload="auto"
+                            loop={false}
                             listenInterval={10}
-                            onPlay={()=> onPlay()}
-                            onListen={() => onListen()}
-
+                            onPlay={(e)=> onPlay(e)}
+                            onListen={(e) => onListen(e)}
                         />
      );
 }
