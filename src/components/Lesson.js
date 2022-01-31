@@ -36,7 +36,7 @@ const Lesson = () => {
                                 <Button onClick={()=> setEngSubtitles(true)}>ENG</Button>
                                 <Button>KWO</Button>
                                 <Button onClick={()=> setEngSubtitles(false)}>HIDE</Button>
-                                <Button href={'/'}>
+                                <Button href={'/korean_listening_app/'}>
                                     HOME
                                 </Button>
                             </Grid>

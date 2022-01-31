@@ -2,7 +2,7 @@
   "name": "korean_listening_app",
   "version": "0.1.0",
   "private": true,
-  "homepage":"https://martinrombach88.github.io/korean_listening_app",
+  "homepage":"https://martinrombach88.github.io/korean_listening_app/",
   "dependencies": {
     "@emotion/react": "^11.7.1",
     "@emotion/styled": "^11.6.0",

@@ -10,7 +10,7 @@ const HomeBtn = ({courseObject}) => {
 
     return ( 
     <ListItem sx={{justifyContent:"center"}}>
-        <Button align="center" variant="outlined" href={`course/${courseObject.id}`} sx={{minWidth:"100%"}}> 
+        <Button align="center" variant="outlined" href={`/korean_listening_app/course/${courseObject.id}`} sx={{minWidth:"100%"}}> 
             <ListItemAvatar>
                 <Avatar alt="iyagi" src={require('../images/' + courseObject.image)} />
             </ListItemAvatar>

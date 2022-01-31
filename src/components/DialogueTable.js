@@ -58,7 +58,7 @@ const DialogueTable = ({dialogues, engSubtitles, setEngSubtitles}) => {
         <PaginatedTable 
         headers={headers} 
         dataRows={rows} 
-        entriesPerPage={3}
+        entriesPerPage={5}
         className="paginatedTable"
         />
      );
