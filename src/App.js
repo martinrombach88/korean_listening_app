@@ -6,8 +6,6 @@ import Course from '../src/components/Course'
 import Lesson from '../src/components/Lesson'
 import Error from '../src/components/Error'
 import Container from '@mui/material/Container';
-import CssBaseline from "@mui/material/CssBaseline";
-import TradPattern from "./images/tradPattern.png";
 
 const kpTheme = createTheme({
   typography: {
