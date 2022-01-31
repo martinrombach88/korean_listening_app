@@ -1,108 +1,85 @@
-import MaterialTable, { MTableToolbar, MTableHeader } from 'material-table'
+import PaginatedTable from '@fidelisppm/paginated-table';
 import lessonDialogue from '../json/lesson_dialogue.json'
-// import {Link} from 'react-router-dom';
 import { useRef } from 'react';
 import AudioPlayer from 'react-h5-audio-player';
 import 'react-h5-audio-player/lib/styles.css';
-
-import { styled } from '@mui/material/styles';
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell, { tableCellClasses } from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
+import Typography from '@mui/material/Typography';
+import '../index.css'
 
 
 const DialogueTable = ({dialogues, engSubtitles, setEngSubtitles}) => {
-    
     const playerRef = useRef();
+    const rows = [];
 
-    const onPlay = (dialogueList) => {
-        if(playerRef.current.audio.current.currentTime < dialogueList.dialogue_stop) {
-            console.log(playerRef.current.audio.current.currentTime);
-            playerRef.current.audio.current.currentTime = dialogueList.dialogue_start;
+    dialogues.map((row)=> {
+        const onPlay = () => {
+            if(playerRef.current.audio.current.currentTime < dialogues.dialogue_stop) {
+                console.log(playerRef.current.audio);
+                playerRef.current.audio.current.currentTime = dialogues.dialogue_start;
+            }   
+        }
+
+        const onListen = () => {
+            if(playerRef.current.audio.current.currentTime >= dialogues.dialogue_stop) {
+                playerRef.current.audio.current.currentTime = dialogues.dialogue_start;
+                playerRef.current.audio.current.pause();   
+            }
+        }
+        let displayedKRText = '';
+        let displayedENGText = '';
+        if (engSubtitles) {
+            displayedKRText = `${row.speaker_hangeul}: ${row.original_text}`;
+            displayedENGText = `${row.speaker_roman}: ${row.gt_text}`
+        } else {
+            displayedKRText = `${row.speaker_hangeul}: ${row.original_text}`;
         }
         
-    }
+        rows.push(
+            {
+            sentence:
+                <>
+                <Typography sx={{ m: 1}}>
+                    {displayedKRText}
+                </Typography>
+                <Typography sx={{ m: 1}}>
+                    {displayedENGText}
+                </Typography>
+                </>,
+            sound: <AudioPlayer
+                    style={{
+                        // width:'80px',
+                        boxShadow:'none',
+                        margin:0,
+                        padding:0,
+                        background:'none',
+                    }}
+                    ref={playerRef} 
+                    src={require('../audio/int/' + row.mp3file)}                            
+                    layout="horizontal"
+                    showJumpControls={false}
+                    customVolumeControls={[]}
+                    // showProgressBar={false}
+                    // customProgressBarSection={[]}
+                    preload="auto"
+                    listenInterval={10}
+                    onPlay={()=> onPlay()}
+                    onListen={() => onListen()}
+            /> 
+            })
+    });
 
-    const onListen = (dialogueList) => {
-        if(playerRef.current.audio.current.currentTime >= dialogueList.dialogue_stop) {
-            playerRef.current.audio.current.currentTime = dialogueList.dialogue_start;
-            playerRef.current.audio.current.pause();   
-        }
-    }
-
-    const columns = [ 
-        {
-            title: 'Sentence',
-            field: 'textContent',
-            
-            render: (rowData) => {
-                
-                if (engSubtitles) {
-                    return <div>{rowData.speaker_hangeul}: {rowData.original_text} <br></br>{rowData.speaker_roman}:{rowData.gt_text}</div>
-                } else {
-                    return `${rowData.speaker_hangeul}: ${rowData.original_text}`;
-                }
-                
-            }
-        },
-        {
-            title: '',
-            field: 'link',
-            render: (rowData) => (
-
-                <AudioPlayer 
-                            style={{
-                                // width:'80px',
-                                boxShadow:'none',
-                                margin:0,
-                                padding:0,
-                            }}
-                            ref={playerRef}
-                            layout="horizontal"
-                            showJumpControls={false}
-                            // showProgressBar={false}
-                            customVolumeControls={[]}
-                            // customProgressBarSection={[]}
-                            src={require('../audio/int/' + rowData.mp3file)}
-                            preload="auto"
-                            listenInterval={10}
-                            onPlay={()=> onPlay()}
-                            onListen={() => onListen()}
-
-                        />
-            ),
-        },
+    const headers = [
+        { key: 'sentence', center: false, sortable: false}, // Center defaults to false
+        { key: 'sound', center: false, sortable: false }, // Sortable defaults to true
     ];
 
-
     return ( 
-        <MaterialTable
-                    title=""
-                    data={dialogues}
-                    columns={columns}
-                    options={{
-                        search: false,
-                        paging: true,
-                        pageSize: 5,
-                        onPageChange: true,
-                        
-                    }}
-                    components={{
-                        Toolbar: props => (
-                            <div style={{ display:"none" }}>
-                                <MTableToolbar {...props} />
-                            </div>
-                        ),
-                        Header: props => (
-                            <div style={{display:"none"}}>
-                                <MTableHeader {...props} />
-                            </div>
-                        )
-                    }}
+        
+        <PaginatedTable 
+        headers={headers} 
+        dataRows={rows} 
+        entriesPerPage={5}
+        className="paginatedTable"
         />
      );
 }

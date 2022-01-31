@@ -1,4 +1,3 @@
-
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
@@ -8,7 +7,6 @@ import Card from '@mui/material/Card';
 import CardMedia from '@mui/material/CardMedia';
 import mediaTop from '../images/mediaTop.png';
 import CourseBtn from './CourseBtn';
-import IyagiInt from './IyagiInt';
 import lessonDialogue from '../json/lesson_dialogue.json';
 import { useParams } from 'react-router-dom';
 import { getCourse } from './Query'
@@ -21,25 +19,23 @@ import { getCourse } from './Query'
 const Course = () => {
     const {courseid} = useParams();
     const course = getCourse(courseid);
-    console.log(course);
     const renderedCourseBtns = course.lessons.map((lesson)=> {
         return (
         <CourseBtn lesson={lesson} key={lesson.id} course={course}/>
         )
     });
-    console.log(courseid);
     return (       
         
         <Container align="center">
 
             <Grid>
-                <Typography sx={{ m: 2}} variant="h4">
-                {IyagiInt.title} - {IyagiInt.company}
+                <Typography sx={{ m: 2}} variant="h6">
+                {course.roman_name} - {course.company}
                 
                 </Typography>
             </Grid>
             
-            <Card sx={{width: 800}}>
+            <Card sx={{width: '70%'}}>
                 <CardMedia
                     component="img"
                     alt="topMedia"
@@ -53,7 +49,7 @@ const Course = () => {
                 </Grid>
             </Card>
 
-            <Button variant="contained" sx={{m:1}} href="/">Home</Button>
+            <Button variant="contained" sx={{mt:1}} href="/">Home</Button>
         </Container> 
     
     );

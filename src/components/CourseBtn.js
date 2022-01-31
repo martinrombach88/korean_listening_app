@@ -12,20 +12,21 @@ const CourseBtn = ({course, lesson}) => {
                             <Button variant="outlined" href={`${course.id}/lesson/${lesson.number}`}>
                                 <ListItemAvatar>
                                     <Avatar alt="iyagi" src={iyagiPic} />
+                                    {/* This isn't modular yet. */}
                                 </ListItemAvatar>
 
                                 <ListItemText
                                     primary={
                                         
                                         <Typography
-                                            variant="h5"
+                                            variant="body1"
                                             color="text.primary"
                                         >Lesson {lesson.number}: {lesson.roman_name}
                                         </Typography>
                                     }        
                                     secondary={
                                         <Typography
-                                            variant="h5"
+                                            variant="subtitle1"
                                             color="text.link"
                                         >
                                         {lesson.hangeul_name}

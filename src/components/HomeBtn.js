@@ -19,14 +19,14 @@ const HomeBtn = ({courseObject}) => {
                 primary={
                     
                     <Typography
-                        variant="h5"
+                        variant="h6"
                         color="text.primary"
                     >{courseObject.roman_name}
                     </Typography>
                 }        
                 secondary={
                     <Typography
-                        variant="h6"
+                        variant="p"
                         color="text.link"
                     >
                         {courseObject.company}

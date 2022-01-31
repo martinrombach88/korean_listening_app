@@ -16,12 +16,11 @@ const DialogueBtn = ({dialogueList}) => {
 
     const onPlay = () => {
         if(playerRef.current.audio.current.currentTime < dialogueList.dialogue_stop) {
-            // console.log(playerRef.current.audio.current.currentTime);
+            console.log(playerRef.current.audio.current.currentTime);
             playerRef.current.audio.current.currentTime = dialogueList.dialogue_start;
         }
         
     }
-
     const onListen = () => {
         if(playerRef.current.audio.current.currentTime >= dialogueList.dialogue_stop) {
             playerRef.current.audio.current.currentTime = dialogueList.dialogue_start;
@@ -58,9 +57,9 @@ const DialogueBtn = ({dialogueList}) => {
                             ref={playerRef}
                             layout="horizontal"
                             showJumpControls={false}
-                            showProgressBar={false}
                             customVolumeControls={[]}
-                            customProgressBarSection={[]}
+                            // showProgressBar={false}
+                            // customProgressBarSection={[]}
                             src={require('../audio/int/' + dialogueList.mp3file)}
                             preload="auto"
                             listenInterval={10}

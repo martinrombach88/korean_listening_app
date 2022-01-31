@@ -7,6 +7,7 @@ import Course from '../src/components/Course'
 import Lesson from '../src/components/Lesson'
 import Error from '../src/components/Error'
 import Container from '@mui/material/Container';
+import CssBaseline from "@mui/material/CssBaseline";
 
 const kpTheme = createTheme({
   typography: {
@@ -14,8 +15,9 @@ const kpTheme = createTheme({
     fontWeightLight: 300,
     fontWeightMedium: 400,
     fontWeightBold: 500,
-    fontSize: 16
+    fontSize: 16,
   },
+  
 
 })
 

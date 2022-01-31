@@ -19,17 +19,11 @@ const Home = () => {
         <Container align="center" sx={{ width: '100%'}} >
 
             <Grid>
-                <Typography sx={{ m: 2}} variant="h5">
+                <Typography sx={{ mt:2}} variant="h6">
                 Korean Audio Courses
                 </Typography>
 
-                <Typography sx={{ m: 2}}variant="h5">한국어 오디오 코스</Typography>
-            </Grid>
-
-            <Grid>
-                <Typography sx={{ m: 2}} variant="h4">
-                Course List
-                </Typography>
+                <Typography sx={{ mb:2}}variant="h6">한국어 오디오 코스</Typography>
             </Grid>
             
             <Card sx={{width: 350}}>

@@ -9,9 +9,9 @@ const courses = [
     company: "Talk to Me in Korean",
     image : "iyagi.jpg",
     lessons: [
-      { id: "priority-seating", number: 1, roman_name: "priority Seating", hangeul_name: "노인 우선석"},
+      { id: "priority-seating", number: 1, roman_name: "Priority Seating", hangeul_name: "노인 우선석"},
       { id: "bookshops", number: 2, roman_name: "Bookshops", hangeul_name: "서점"}, 
-      { id: "coping-with-stress", number: 3, roman_name: "Coping with stress", hangeul_name: "스트레스를 해소하다"}
+      { id: "coping-with-stress", number: 3, roman_name: "Coping with Stress", hangeul_name: "스트레스를 해소하다"}
     ]
   },
   { 
@@ -35,7 +35,6 @@ export const getCourse = (courseid) => {
   let matched = null;
   const result = courses.map((course) => {
     if (course.id === courseid) {
-      console.log('matched');
        matched = course;
     }
     return true;
@@ -55,10 +54,8 @@ export const getLessons = (courseid) => {
 }
 
 export const getDialogues = (courseid, lesson_num) => {
-  
   let matched = [];
   const result = lessonDialogue[2].data.map((dialogue) => {
-    // console.log(courseid, lesson_num)
     if (dialogue.course === courseid && parseInt(dialogue.lesson_number) == lesson_num) {
        matched.push(dialogue); 
     }
