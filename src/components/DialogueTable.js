@@ -5,26 +5,30 @@ import AudioPlayer from 'react-h5-audio-player';
 import 'react-h5-audio-player/lib/styles.css';
 import Typography from '@mui/material/Typography';
 import '../index.css'
+import DialogueAudio from './DialogueAudio';
 
 
 const DialogueTable = ({dialogues, engSubtitles, setEngSubtitles}) => {
     const playerRef = useRef();
     const rows = [];
+    
 
     dialogues.map((row)=> {
         const onPlay = () => {
-            if(playerRef.current.audio.current.currentTime < dialogues.dialogue_stop) {
-                console.log(playerRef.current.audio);
-                playerRef.current.audio.current.currentTime = dialogues.dialogue_start;
+            if(playerRef.current.audio.current.currentTime < row.dialogue_stop) {
+                console.log(playerRef.current.audio.current.currentTime);
+                console.log(row.dialogue_start)
+                playerRef.current.audio.current.currentTime = row.dialogue_start;
             }   
         }
 
         const onListen = () => {
-            if(playerRef.current.audio.current.currentTime >= dialogues.dialogue_stop) {
-                playerRef.current.audio.current.currentTime = dialogues.dialogue_start;
+            if(playerRef.current.audio.current.currentTime >= row.dialogue_stop) {
+                playerRef.current.audio.current.currentTime = row.dialogue_start;
                 playerRef.current.audio.current.pause();   
             }
         }
+
         let displayedKRText = '';
         let displayedENGText = '';
         if (engSubtitles) {
@@ -45,26 +49,7 @@ const DialogueTable = ({dialogues, engSubtitles, setEngSubtitles}) => {
                     {displayedENGText}
                 </Typography>
                 </>,
-            sound: <AudioPlayer
-                    style={{
-                        // width:'80px',
-                        boxShadow:'none',
-                        margin:0,
-                        padding:0,
-                        background:'none',
-                    }}
-                    ref={playerRef} 
-                    src={require('../audio/int/' + row.mp3file)}                            
-                    layout="horizontal"
-                    showJumpControls={false}
-                    customVolumeControls={[]}
-                    // showProgressBar={false}
-                    // customProgressBarSection={[]}
-                    preload="auto"
-                    listenInterval={10}
-                    onPlay={()=> onPlay()}
-                    onListen={() => onListen()}
-            /> 
+            sound: <DialogueAudio dialogueList={row}/>
             })
     });
 

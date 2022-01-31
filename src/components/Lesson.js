@@ -45,8 +45,6 @@ const Lesson = () => {
                     <DialogueTable dialogues={dialogues} engSubtitles={engSubtitles} setEngSubtitles={setEngSubtitles}/>
                     
                 </Card>
-
-                <DialogueBtn dialogueList={dialogues[1]} />
             </Container>
         </div>
      );
