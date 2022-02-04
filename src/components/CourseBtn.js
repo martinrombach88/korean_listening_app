@@ -1,19 +1,13 @@
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
-import ListItemAvatar from '@mui/material/ListItemAvatar';
-import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import iyagiPic from '../images/iyagi.jpg'
 
 const CourseBtn = ({course, lesson}) => {
     return ( 
         <ListItem sx={{width:"100%"}}>
 
-                            <Button variant="outlined" href={`${course.id}/lesson/${lesson.number}`}>
-                                <ListItemAvatar>
-                                    <Avatar alt="iyagi" src={iyagiPic} />
-                                </ListItemAvatar>
+                            <Button sx={{width:"100%"}} align="center" variant="outlined" href={`${course.id}/lesson/${lesson.number}`}>
 
                                 <ListItemText
                                     primary={

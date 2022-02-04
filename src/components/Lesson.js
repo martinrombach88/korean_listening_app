@@ -13,8 +13,24 @@ import mediaTop from '../images/tradPattern.png';
 
 const Lesson = () => {
     const [engSubtitles, setEngSubtitles] = useState(false);
+    const [kwoSubtitles, setKwoSubtitles] = useState(false);
     const {courseid, lessonid} = useParams();
     const dialogues = getDialogues(courseid, lessonid);
+
+    const engSub = () => {
+        setEngSubtitles(true);
+        setKwoSubtitles(false);
+    };
+
+    const kwoSub = () => {
+        setEngSubtitles(false)
+        setKwoSubtitles(true)
+    };
+
+    const noSub = () => {
+        setEngSubtitles(false)
+        setKwoSubtitles(false)
+    };
 
     return ( 
         <div>
@@ -27,23 +43,27 @@ const Lesson = () => {
                     image={mediaTop}
                     />         
                     <Grid sx={{display:'flex', flexDirection:'row', justifyContent:'center'}}>     
-
-                        <Grid>
-                        <Typography sx={{ m: 1, mb: 1}} variant="p">
+                        <Typography sx={{ m: 2}} variant="p">
                             Lesson {dialogues[0].lesson_number}: {dialogues[0].lesson_name}
                         </Typography>
+
                             <Grid sx={{display:'flex', flexDirection:'row'}}>
-                                <Button onClick={()=> setEngSubtitles(true)}>ENG</Button>
-                                <Button>KWO</Button>
-                                <Button onClick={()=> setEngSubtitles(false)}>HIDE</Button>
-                                <Button href={'/korean_listening_app/'}>
+                                <Button onClick={()=> engSub()}>ENG</Button>
+                                <Button onClick={()=> kwoSub()}>KWO</Button>
+                                <Button onClick={()=> noSub()}>HIDE</Button>
+                                <Button href={'/'}>
                                     HOME
                                 </Button>
                             </Grid>
-                        </Grid>
                     </Grid>
                         
-                    <DialogueTable dialogues={dialogues} engSubtitles={engSubtitles} setEngSubtitles={setEngSubtitles}/>
+                    <DialogueTable 
+                    dialogues={dialogues} 
+                    engSubtitles={engSubtitles} 
+                    setEngSubtitles={setEngSubtitles} 
+                    kwoSubtitles={kwoSubtitles} 
+                    setKwoSubtitles={setKwoSubtitles}
+                    />
 
                 </Card>
             </Container>

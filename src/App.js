@@ -6,6 +6,8 @@ import Course from '../src/components/Course'
 import Lesson from '../src/components/Lesson'
 import Error from '../src/components/Error'
 import Container from '@mui/material/Container';
+import CssBaseline from "@mui/material/CssBaseline";
+import TradPattern from "./images/tradPattern.png";
 
 const kpTheme = createTheme({
   typography: {
@@ -29,12 +31,12 @@ function App() {
       <ThemeProvider theme={kpTheme} >
         <BrowserRouter>
           <Routes>
-              <Route path="/korean_listening_app/">
+              <Route path="/">
                 {/* w3 includes: for the topbar sidebar perhaps <Route path="/" element={<Layout />}> */}
                 <Route index element={<Home/>}/>
-                <Route exact path="/korean_listening_app/course/:courseid" element={<Course/>}/>
-                <Route path="/korean_listening_app/error" element={<Error />} />
-                <Route exact path="/korean_listening_app/course/:courseid/lesson/:lessonid" element={<Lesson />} />
+                <Route exact path="course/:courseid" element={<Course/>}/>
+                <Route path="error" element={<Error />} />
+                <Route exact path="course/:courseid/lesson/:lessonid" element={<Lesson />} />
               </Route>
           </Routes>
         </BrowserRouter>

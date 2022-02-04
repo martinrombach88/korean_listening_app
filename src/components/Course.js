@@ -7,14 +7,8 @@ import Card from '@mui/material/Card';
 import CardMedia from '@mui/material/CardMedia';
 import mediaTop from '../images/tradPattern.png';
 import CourseBtn from './CourseBtn';
-import lessonDialogue from '../json/lesson_dialogue.json';
 import { useParams } from 'react-router-dom';
 import { getCourse } from './Query'
-
-//Iyagi Int
-// 0-70 "Priority seats for the elderly" OK
-// 71-146 "Bookstores" OK
-// 147-248 "Coping with stress" OK
 
 const Course = () => {
     const {courseid} = useParams();

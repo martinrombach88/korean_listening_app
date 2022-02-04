@@ -9,17 +9,15 @@ import Typography from '@mui/material/Typography';
 const HomeBtn = ({courseObject}) => {
 
     return ( 
-    <ListItem sx={{justifyContent:"center"}}>
-        <Button align="center" variant="outlined" href={`/korean_listening_app/course/${courseObject.id}`} sx={{minWidth:"100%"}}> 
-            <ListItemAvatar>
-                <Avatar alt="iyagi" src={require('../images/' + courseObject.image)} />
-            </ListItemAvatar>
+    <ListItem sx={{justifyContent:"space-between"}}>
+        <Button variant="outlined" href={`course/${courseObject.id}`} sx={{minWidth:"100%"}}> 
 
-            <ListItemText
+
+            <ListItemText sx={{ml:2}} 
                 primary={
                     
                     <Typography
-                        variant="h6"
+                        variant="h5"
                         color="text.primary"
                     >{courseObject.roman_name}
                     </Typography>
@@ -33,6 +31,9 @@ const HomeBtn = ({courseObject}) => {
                     </Typography>
                 }
             />
+            <ListItemAvatar sx={{mr:0}}> 
+                <Avatar sx={{mr:0}} alt="iyagi" src={require('../images/' + courseObject.image)} />
+            </ListItemAvatar>
         </Button>
     </ListItem> 
     );
