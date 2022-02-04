@@ -1,6 +1,6 @@
 
 import { createTheme, ThemeProvider} from '@mui/material/styles';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import Home from '../src/components/Home'
 import Course from '../src/components/Course'
 import Lesson from '../src/components/Lesson'
@@ -14,6 +14,7 @@ const kpTheme = createTheme({
     fontFamily:'Montserrat, Gowun Dodum,san serif',
     fontSize: 12
   },
+  
   palette: {
     primary: {
       light: '#28BA9A',
@@ -29,7 +30,7 @@ function App() {
   return (
     <Container>
       <ThemeProvider theme={kpTheme} >
-        <BrowserRouter>
+        <HashRouter>
           <Routes>
               <Route path="/">
                 {/* w3 includes: for the topbar sidebar perhaps <Route path="/" element={<Layout />}> */}
@@ -39,7 +40,7 @@ function App() {
                 <Route exact path="course/:courseid/lesson/:lessonid" element={<Lesson />} />
               </Route>
           </Routes>
-        </BrowserRouter>
+        </HashRouter>
       </ThemeProvider>
     </Container>
   );

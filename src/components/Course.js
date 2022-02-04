@@ -10,6 +10,7 @@ import CourseBtn from './CourseBtn';
 import { useParams } from 'react-router-dom';
 import { getCourse } from './Query'
 
+
 const Course = () => {
     const {courseid} = useParams();
     const course = getCourse(courseid);

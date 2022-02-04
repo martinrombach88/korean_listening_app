@@ -7,6 +7,9 @@ import { useRef } from 'react';
 import AudioPlayer from 'react-h5-audio-player';
 import 'react-h5-audio-player/lib/styles.css';
 
+// import Int1 from './Int1_HardCopy';
+// import Int from './AudioFiles';
+
 const DialogueBtn = ({dialogueList}) => {
 
     const playerRef = useRef();

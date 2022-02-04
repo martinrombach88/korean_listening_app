@@ -8,6 +8,7 @@ import CardMedia from '@mui/material/CardMedia';
 import mediaTop from '../images/tradPattern.png';
 import HomeBtn from './HomeBtn'
 import { getCourses } from './Query'
+import {Link} from 'react-router-dom';
 
 const Home = () => {
     const courses = getCourses();

@@ -4,13 +4,14 @@ import ListItemAvatar from '@mui/material/ListItemAvatar';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-
+import {Link} from 'react-router-dom';
 
 const HomeBtn = ({courseObject}) => {
 
     return ( 
-    <ListItem sx={{justifyContent:"space-between"}}>
-        <Button variant="outlined" href={`course/${courseObject.id}`} sx={{minWidth:"100%"}}> 
+    <ListItem sx={{justifyContent:"space-between"}}  >
+        <Link to={`course/${courseObject.id}`} sx={{minWidth:"100%"}} style={{ textDecoration: 'none' }}>
+        <Button variant="outlined" > 
 
 
             <ListItemText sx={{ml:2}} 
@@ -35,6 +36,7 @@ const HomeBtn = ({courseObject}) => {
                 <Avatar sx={{mr:0}} alt="iyagi" src={require('../images/' + courseObject.image)} />
             </ListItemAvatar>
         </Button>
+        </Link>
     </ListItem> 
     );
 }

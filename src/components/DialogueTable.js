@@ -46,8 +46,8 @@ const DialogueTable = ({dialogues, engSubtitles, setEngSubtitles, kwoSubtitles, 
     });
 
     const headers = [
-        { key: 'sentence', center: false, sortable: false},
-        { key: 'sound', center: false, sortable: false },
+        { key: 'sentence', center: false, sortable: false}, // Center defaults to false
+        { key: 'sound', center: false, sortable: false }, // Sortable defaults to true
     ];
 
     return ( 
