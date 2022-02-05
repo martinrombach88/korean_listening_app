@@ -10,4 +10,4 @@ a user can play segments at their leisure.
 The courses include optional changes to subtitles, with traditional English and English in the Korean word order, something
 useful for those having trouble with the reversal of words when learning a language like Korean.
 
-The website uses modular components to take audio files, passing information through props and using hooks like useState to populate the view.
+The website uses modular components to pass dialogue and audio information through props and using hooks like useState to populate the view.
