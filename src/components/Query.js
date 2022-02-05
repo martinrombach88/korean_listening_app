@@ -22,10 +22,12 @@ const courses = [
     image: "iyagi.jpg",
     lessons: [
         { id: 0, number: 1, roman_name: "0", hangeul_name: "0"},
-        { id: 1, number: 2, roman_name: "1", hangeul_name: "1"}
+        { id: 1, number: 2, roman_name: "1", hangeul_name: "1"},
+        { id: 2, number: 3, roman_name: "2", hangeul_name: "2"}
     ]
   }
 ];
+
 
 export const getCourses = () => {
     return courses;

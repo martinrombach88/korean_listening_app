@@ -9,16 +9,25 @@ import mediaTop from '../images/tradPattern.png';
 import CourseBtn from './CourseBtn';
 import { useParams } from 'react-router-dom';
 import { getCourse } from './Query'
-import {Link} from 'react-router-dom';
 
 
 const Course = () => {
     const {courseid} = useParams();
     const course = getCourse(courseid);
     const renderedCourseBtns = course.lessons.map((lesson)=> {
-        return (
-        <CourseBtn lesson={lesson} key={lesson.id} course={course}/>
-        )
+        if (isNaN(lesson.roman_name) === false) {
+            return (
+                <Typography variant="h6" sx={{p:1, color:"red"}} key={lesson.id}>
+                Lesson Not Configured.
+                </Typography>
+            )
+
+        } else {
+            return (
+                <CourseBtn lesson={lesson} key={lesson.id} course={course}/>
+                )
+        }
+ 
     });
     return (       
         <Container align="center" sx={{mt:4}}>
@@ -42,14 +51,9 @@ const Course = () => {
                         {renderedCourseBtns}
                     </List>
                 </Grid>
-                <Link to={'/'} style={{ textDecoration: 'none' }}>
-                    <Button  variant="contained" sx={{mt:2, mb:3}}>Home</Button>
-                </Link>
+                    <Button  href={'#'}variant="contained" sx={{mt:2, mb:3}}>Home</Button>
             </Card>
-
-            
         </Container> 
-    
     );
 }
  

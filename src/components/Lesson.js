@@ -35,25 +35,26 @@ const Lesson = () => {
     return ( 
         <div>
             <Container align="center">
-                <Card sx={{width:"100%"}}>
+                <Card sx={{width:"100%", mt:5}}>
                     <CardMedia
                     component="img"
                     alt="topMedia"
                     height="40"
                     image={mediaTop}
                     />         
-                    <Grid sx={{display:'flex', flexDirection:'row', justifyContent:'center'}}>     
+                    <Grid sx={{display:'flex', flexDirection:'column', justifyContent:'center'}}>     
                         <Typography sx={{ m: 2}} variant="p">
                             Lesson {dialogues[0].lesson_number}: {dialogues[0].lesson_name}
                         </Typography>
 
-                            <Grid sx={{display:'flex', flexDirection:'row'}}>
+                            <Grid >
                                 <Button onClick={()=> engSub()}>ENG</Button>
                                 <Button onClick={()=> kwoSub()}>KWO</Button>
                                 <Button onClick={()=> noSub()}>HIDE</Button>
-                                <Button href={'/'}>
+                                <Button href={'#'}>
                                     HOME
                                 </Button>
+                                
                             </Grid>
                     </Grid>
                         
