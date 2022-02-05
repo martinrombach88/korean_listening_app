@@ -31,8 +31,8 @@ const Home = () => {
                 </Typography>
 
                 <Typography variant="h6">한국어 오디오 코스</Typography>
-                <Grid >
-                    <List>
+                <Grid sx={{display:"flex", width:"100%", flexDirection:"column", alignItems:"center"}}>
+                    <List >
                         {renderedHomeBtns}                    
                     </List>
                 </Grid>

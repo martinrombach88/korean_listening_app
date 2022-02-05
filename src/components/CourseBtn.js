@@ -6,10 +6,9 @@ import {Link} from 'react-router-dom';
 
 const CourseBtn = ({course, lesson}) => {
     return ( 
-        <ListItem sx={{width:"100%"}}>
-            <Link to={`lesson/${lesson.number}`} sx={{minWidth:"100%"}} style={{ textDecoration: 'none' }} >
-                <Button sx={{width:"100%"}} align="center" variant="outlined">
-
+        <ListItem >
+            <Link align="center"  to={`lesson/${lesson.number}`} style={{ textDecoration: 'none', minWidth:"100%"}}>
+                <Button>
                     <ListItemText
                         primary={
                             

@@ -9,12 +9,14 @@ import {Link} from 'react-router-dom';
 const HomeBtn = ({courseObject}) => {
 
     return ( 
-    <ListItem sx={{justifyContent:"space-between"}}  >
-        <Link to={`course/${courseObject.id}`} sx={{minWidth:"100%"}} style={{ textDecoration: 'none' }}>
-        <Button variant="outlined" > 
+    <ListItem sx={{width:"100%"}}>
+        <Link to={`course/${courseObject.id}`} style={{ textDecoration: 'none' }}>
+        <Button > 
+        <ListItemAvatar sx={{mr:0}}> 
+                <Avatar sx={{mr:0}} alt="iyagi" src={require('../images/' + courseObject.image)} />
+            </ListItemAvatar>
 
-
-            <ListItemText sx={{ml:2}} 
+            <ListItemText  
                 primary={
                     
                     <Typography
@@ -25,16 +27,15 @@ const HomeBtn = ({courseObject}) => {
                 }        
                 secondary={
                     <Typography
-                        variant="p"
+                        align="left"
+                        variant="subtitle1"
                         color="text.link"
                     >
                         {courseObject.company}
                     </Typography>
                 }
             />
-            <ListItemAvatar sx={{mr:0}}> 
-                <Avatar sx={{mr:0}} alt="iyagi" src={require('../images/' + courseObject.image)} />
-            </ListItemAvatar>
+
         </Button>
         </Link>
     </ListItem> 

@@ -9,6 +9,7 @@ import mediaTop from '../images/tradPattern.png';
 import CourseBtn from './CourseBtn';
 import { useParams } from 'react-router-dom';
 import { getCourse } from './Query'
+import {Link} from 'react-router-dom';
 
 
 const Course = () => {
@@ -38,7 +39,9 @@ const Course = () => {
                         {renderedCourseBtns}
                     </List>
                 </Grid>
-                <Button variant="contained" sx={{mb:1}} href="/">Home</Button>
+                <Link to={'/'} sx={{minWidth:"100%"}} style={{ textDecoration: 'none' }}>
+                    <Button variant="contained" sx={{mb:1}}>Home</Button>
+                </Link>
             </Card>
 
             
