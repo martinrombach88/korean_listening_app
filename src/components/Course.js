@@ -30,7 +30,7 @@ const Course = () => {
                     image={mediaTop}
                 />
                 <Grid>
-    `                <Typography  variant="h4" fontWeight="bold">
+    `                <Typography  variant="h4" fontWeight="bold" sx={{p:1}}>
                     {course.roman_name} 
                     </Typography>
                     <Typography  variant="h6">

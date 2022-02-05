@@ -13,11 +13,11 @@ const CourseBtn = ({course, lesson}) => {
                         primary={
                             
                             <Typography
-                            
                                 variant="h6"
                                 color="text.primary"
-                            >Lesson {lesson.number}: {lesson.roman_name}
+                            >Lesson {lesson.number}: <br></br>{lesson.roman_name}
                             </Typography>
+                            
                         }        
                         secondary={
                             <Typography
