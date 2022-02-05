@@ -21,7 +21,7 @@ const Course = () => {
         )
     });
     return (       
-        <Container align="center">
+        <Container align="center" sx={{mt:4}}>
             <Card>
                 <CardMedia
                     component="img"
@@ -30,8 +30,11 @@ const Course = () => {
                     image={mediaTop}
                 />
                 <Grid>
-    `                <Typography  variant="h6">
-                    {course.roman_name} - {course.company}
+    `                <Typography  variant="h4" fontWeight="bold">
+                    {course.roman_name} 
+                    </Typography>
+                    <Typography  variant="h6">
+                    {course.company}
                     </Typography>
                 </Grid>
                 <Grid >
@@ -39,8 +42,8 @@ const Course = () => {
                         {renderedCourseBtns}
                     </List>
                 </Grid>
-                <Link to={'/'} sx={{minWidth:"100%"}} style={{ textDecoration: 'none' }}>
-                    <Button variant="contained" sx={{mb:1}}>Home</Button>
+                <Link to={'/'} style={{ textDecoration: 'none' }}>
+                    <Button  variant="contained" sx={{mt:2, mb:3}}>Home</Button>
                 </Link>
             </Card>
 

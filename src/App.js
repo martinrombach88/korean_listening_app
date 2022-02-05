@@ -11,7 +11,7 @@ import Container from '@mui/material/Container';
 const kpTheme = createTheme({
   typography: {
     fontFamily:'Montserrat, Gowun Dodum,san serif',
-    fontSize: 12,
+    fontSize: 14,
   },
   
   palette: {

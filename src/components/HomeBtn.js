@@ -20,6 +20,7 @@ const HomeBtn = ({courseObject}) => {
                 primary={
                     
                     <Typography
+                        align="left"
                         variant="h5"
                         color="text.primary"
                     >{courseObject.roman_name}

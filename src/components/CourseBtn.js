@@ -13,17 +13,19 @@ const CourseBtn = ({course, lesson}) => {
                         primary={
                             
                             <Typography
-                                variant="body1"
+                            
+                                variant="h6"
                                 color="text.primary"
                             >Lesson {lesson.number}: {lesson.roman_name}
                             </Typography>
                         }        
                         secondary={
                             <Typography
-                                variant="subtitle1"
+                                align="center"
+                                variant="h6"
                                 color="text.link"
                             >
-                            {lesson.hangeul_name}
+                            강의{lesson.number}: {lesson.hangeul_name}
                             </Typography>
                         }
                     />
