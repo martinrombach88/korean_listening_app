@@ -45,9 +45,7 @@ const Home = () => {
                     by a Talk To Me In Korean subscriber.
                     If you are interested in the courses, please support the official website.
                 <br></br>
-                <Link sx={{m:2}} to="https://www.talktomeinkorean.com/"> 
-                Talk To Me In Korean
-                </Link>
+                <a href="https://www.talktomeinkorean.com/">TalkToMeInKorean.com</a> 
                 </Typography>
             </Card>
         </Container> 
