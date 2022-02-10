@@ -1,6 +1,6 @@
 **Korean Listening By Sentence**
 
-<kbd><img src="/images/internationalSchoolBrochureDemo.gif" /></kbd>
+<kbd><img src="/images/korean_screen.gif" /></kbd>
 
 Korean Listening By Sentence is an interactive repetitive listening application built using React, React Router and Material UI.
 
