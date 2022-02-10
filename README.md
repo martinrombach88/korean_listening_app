@@ -1,5 +1,7 @@
 **Korean Listening By Sentence**
 
+<kbd><img src="/images/korean_screen.gif" /></kbd>
+
 Korean Listening By Sentence is an interactive repetitive listening application built using React, React Router and Material UI.
 
 Built in collaboration with Andrew Rombach, this audio application catalogues individual audio segments from Talk To Me In Korean
